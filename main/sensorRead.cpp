@@ -22,7 +22,10 @@ float getV(){
   digitalWrite(vOn,LOW);
   digitalWrite(iOn,LOW);
 
-  return(0.6527*(756-mn)-0.9876);   //(247*(756-mn)/380);
+  float out = 0.6527*(756-mn)-0.9876;
+  if(out<50) out = 0;
+
+  return(out);   //(247*(756-mn)/380);
 }
 
 float getI(){
@@ -41,6 +44,7 @@ float getI(){
   
   //mx = ((mx)/sqrt(2));
   mx = mx*0.0111-0.271;
+  if(mx<0.1) mx=0;
   return(mx);
 }
 
