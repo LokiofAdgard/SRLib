@@ -72,6 +72,11 @@ int switchAct(){
   else return 0;                      //passive
 }
 
+bool getState(){
+  if(getV()>150) return true;
+    else return false;
+}
+
 void stable(){
   for(int i = 0;i<5;i++){
     int v = analogRead(A0);  

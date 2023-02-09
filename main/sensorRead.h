@@ -17,6 +17,10 @@
  * returns 1 if medium press(>5s-toggle)
  * returns 2 if long press(>10s-reset)
  * 
+ * bool s = getState();
+ * returns true if relay on
+ * returns false if relay off
+ * 
  */
 
 #ifndef SENSORREAD_H
@@ -38,5 +42,6 @@ float getI();
 bool relayOn(bool b);
 int switchAct();
 void stable();
+bool getState();
 
 #endif
